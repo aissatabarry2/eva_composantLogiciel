@@ -10,6 +10,10 @@ app.use(express.json());
 
 // Routes
 app.use("/", userRoutes);
+app.get("/", (req, res) => {
+  res.json({ message: "Backend opérationnel 🚀" });
+});
+
 
 // Connexion MongoDB Atlas
 mongoose.connect(process.env.MONGO_URI)
